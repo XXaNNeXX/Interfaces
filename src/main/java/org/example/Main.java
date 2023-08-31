@@ -5,6 +5,10 @@ public class Main {
 
         MediaController media = new MediaController();
 
+        media.playMedia(new MusicPlayer());
+        media.playMedia(new VideoPlayer());
+
+        // ---- alternative: --------------------------
         Playable music = new Playable() {
             @Override
             public void playable() {
@@ -21,6 +25,8 @@ public class Main {
 
         media.playMedia(music);
         media.playMedia(video);
+
+        //----------------------------------------------------
 
         Playable mediaAudio = new MusicPlayer();
         Playable mediaVideo = new VideoPlayer();
