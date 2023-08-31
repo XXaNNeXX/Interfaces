@@ -5,33 +5,22 @@ public class Main {
 
         MediaController media = new MediaController();
 
-        media.playMedia(new MusicPlayer());
-        media.playMedia(new VideoPlayer());
+        MusicPlayer music = new MusicPlayer();
+        VideoPlayer video = new VideoPlayer();
 
-        // ---- alternative: --------------------------
-        Playable music = new Playable() {
-            @Override
-            public void playable() {
-                System.out.println("Music started playing");
-            }
-        };
-
-        Playable video = new Playable() {
-            @Override
-            public void playable() {
-                System.out.println("Video started playing");
-            }
-        };
-
+        // Aufruf über MediaController class
         media.playMedia(music);
         media.playMedia(video);
-
-        //----------------------------------------------------
 
         Playable mediaAudio = new MusicPlayer();
         Playable mediaVideo = new VideoPlayer();
 
+        media.playMedia(mediaAudio);
+        media.playMedia(mediaVideo);
+
+        //Aufruf direkt über MusicPlayer und VideoPlayer class
         mediaAudio.playable();
         mediaVideo.playable();
+
     }
 }
